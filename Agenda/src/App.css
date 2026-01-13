@@ -1,0 +1,101 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f1f5f9;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header { text-align: center; margin-bottom: 30px; }
+.header h1 { color: var(--primary); margin: 0; }
+
+/* Estados */
+.loading, .error { text-align: center; font-size: 1.5rem; margin-top: 50px; }
+.error { color: #ef4444; }
+
+/* Favoritos */
+.favoritos-bar {
+  background: #dbeafe;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #bfdbfe;
+}
+.fav-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.fav-item {
+  background: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  display: flex; align-items: center; gap: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.fav-item button {
+  background: none; border: none; color: #ef4444; cursor: pointer; font-weight: bold;
+}
+
+/* Filtros */
+.filtros { display: flex; gap: 10px; margin-bottom: 15px; }
+.filtros input { flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; }
+.filtros select { padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; }
+
+/* Grid */
+.grid-eventos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex; flex-direction: column;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card h3 { margin: 10px 0; flex-grow: 1; font-size: 1.1rem; }
+.card p { margin: 5px 0; color: #64748b; font-size: 0.9rem; }
+
+.btn-detalle {
+  margin-top: 10px;
+  padding: 8px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Tags */
+.tag {
+  padding: 3px 8px; border-radius: 4px; color: white; font-size: 0.75rem; font-weight: bold;
+}
+.tag.Charla { background: #8b5cf6; }
+.tag.Taller { background: #10b981; }
+.tag.Torneo { background: #f59e0b; }
+.tag.Excursión { background: #ef4444; }
+
+/* Detalle */
+.detalle-container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.btn-volver { background: none; border: none; color: var(--primary); cursor: pointer; font-size: 1rem; margin-bottom: 15px; }
+.btn-fav {
+  width: 100%; padding: 12px; margin-top: 20px;
+  border: 2px solid var(--primary); background: white; color: var(--primary);
+  border-radius: 6px; font-weight: bold; cursor: pointer;
+}
+.btn-fav.activo { background: #e2e8f0; color: #64748b; border-color: #e2e8f0; cursor: not-allowed; }
